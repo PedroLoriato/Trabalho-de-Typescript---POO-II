@@ -1,0 +1,19 @@
+{
+  "name": "trabalho-de-typescript---poo-ii",
+  "version": "1.0.0",
+  "description": "Trabalho de Typescript sobre Classes, Herança, Abstração e Polimorfismo. Disciplina de Programação Orientada a Objetos II",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PedroLoriato/Trabalho-de-Typescript---POO-II.git"
+  },
+  "author": "Katiane Maciel do Nascimento e Pedro Henrique Loriato.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PedroLoriato/Trabalho-de-Typescript---POO-II/issues"
+  },
+  "homepage": "https://github.com/PedroLoriato/Trabalho-de-Typescript---POO-II#readme"
+}
