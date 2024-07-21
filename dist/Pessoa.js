@@ -4,8 +4,18 @@ class Pessoa {
     constructor(nome, endereco, telefone, cpf, dtNascimento) {
         this._nome = nome.toUpperCase();
         this._endereco = endereco;
-        this._telefone = telefone;
-        this._cpf = cpf;
+        if (telefone != "" && telefone.length == 15) {
+            this._telefone = telefone;
+        }
+        else {
+            throw new Error("O telefone deve seguir o formato (XX) XXXXX-XXXX");
+        }
+        if (cpf != "" && cpf.length == 14) {
+            this._cpf = cpf;
+        }
+        else {
+            throw new Error("O cpf deve seguir o formato XXX.XXX.XXX-XX");
+        }
         this._dtNascimento = dtNascimento;
     }
     get nome() {
@@ -28,7 +38,7 @@ class Pessoa {
         return this._telefone;
     }
     set telefone(novoTelefone) {
-        if (novoTelefone != "" && novoTelefone.length == 11) {
+        if (novoTelefone != "" && novoTelefone.length == 15) {
             this._telefone = novoTelefone;
         }
     }
