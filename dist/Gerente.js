@@ -7,36 +7,27 @@ const Funcionario_1 = __importDefault(require("./Funcionario"));
 class Gerente extends Funcionario_1.default {
     constructor(nome, endereco, telefone, cpf, dataDeNascimento, salario, agencia, nivel) {
         super(nome, endereco, telefone, cpf, dataDeNascimento, salario, agencia);
+        if (nivel === "")
+            throw new Error("O nível deve ser informado");
         this._nivel = nivel.toUpperCase();
         const niveisPermitidos = ["CONTA", "AGÊNCIA", "REGIONAL"];
-        if (!niveisPermitidos.includes(this._nivel)) {
+        if (!niveisPermitidos.includes(this._nivel))
             throw new Error(`Nível inválido. Deve ser um dos seguintes: ${niveisPermitidos.join(", ")}`);
-        }
     }
     get nivel() {
         return this._nivel;
     }
     set nivel(novoNivel) {
         const niveisPermitidos = ["CONTA", "AGÊNCIA", "REGIONAL"];
-        if (!niveisPermitidos.includes(novoNivel)) {
+        if (!niveisPermitidos.includes(novoNivel))
             throw new Error(`Nível inválido. Deve ser um dos seguintes: ${niveisPermitidos.join(", ")}`);
-        }
         this._nivel = novoNivel;
     }
     bonificacao(percentual) {
-        if (percentual !== undefined) {
+        if (percentual !== undefined)
             return super.bonificacao(percentual);
-        }
-        switch (this._nivel) {
-            case "CONTA":
-                return super.salario *= 1.15;
-            case "AGÊNCIA":
-                return super.salario *= 1.20;
-            case "REGIONAL":
-                return super.salario *= 1.25;
-            default:
-                throw new Error("Nível inválido para cálculo de bonificação.");
-        }
+        const prcBonificacao = this._nivel === "CONTA" ? 0.15 : this.nivel === "AGÊNCIA" ? 0.20 : 0.25;
+        return super.salario * prcBonificacao;
     }
     toString() {
         return `Gerente 

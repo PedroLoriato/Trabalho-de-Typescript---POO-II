@@ -9,13 +9,13 @@ class Funcionario extends Pessoa {
 
   constructor(nome: string, endereco: string, telefone: string, cpf: string, dataDeNascimento: Date, salario: number, agencia: string) {
     super(nome, endereco, telefone, cpf, dataDeNascimento);
+
+    if (salario <= 0.0) throw new Error("O salaário deve ser maior que zero");
     this._salario = salario;
     
-    if (agencia != "" && agencia.length == 4 && agencia.match(/^[0-9]+$/)) {
-      this._agencia = agencia;
-    } else {
+    if (agencia === "" && agencia.length !== 4 && !agencia.match(/^[0-9]+$/)) 
       throw new Error("A agência deve ter exatamente 4 caracteres, sendo todos numéricos.")
-    }
+    this._agencia = agencia;
 
     Funcionario.qtFuncionarios++;
     this._matricula = Funcionario.qtFuncionarios;
@@ -30,9 +30,8 @@ class Funcionario extends Pessoa {
   }
 
   public set salario(novoSalario: number) {
-    if (novoSalario > 0.0) {
+    if (novoSalario > 0.0) 
       this._salario = novoSalario;
-    }
   }
 
   public get agencia(): string {
@@ -40,18 +39,15 @@ class Funcionario extends Pessoa {
   }
 
   public set agencia(novaAgencia: string) {
-    if (novaAgencia != "" && novaAgencia.length == 4 && novaAgencia.match(/^[0-9]+$/)) {
-      this._agencia = novaAgencia;
-    }
-    throw new Error("A agência deve ter exatamente 4 caracteres, sendo todos numéricos.")
+    if (novaAgencia === "" && novaAgencia.length !== 4 && !novaAgencia.match(/^[0-9]+$/)) 
+      throw new Error("A agência deve ter exatamente 4 caracteres, sendo todos numéricos.")
+    this._agencia = novaAgencia;
   }
 
   public bonificacao(percentual?: number): number;
   public bonificacao(percentual: number): number {
-      if (percentual <= 0) {
-        throw new Error("Percentual deve ser maior que zero.");
-      }
-      return this._salario *= (1 + percentual / 100);
+      if (percentual <= 0) throw new Error("Percentual deve ser maior que zero.");
+      return this._salario * (percentual / 100);
   }
 
   public toString(): string {

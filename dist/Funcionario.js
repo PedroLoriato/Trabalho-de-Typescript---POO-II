@@ -7,13 +7,12 @@ const Pessoa_1 = __importDefault(require("./Pessoa"));
 class Funcionario extends Pessoa_1.default {
     constructor(nome, endereco, telefone, cpf, dataDeNascimento, salario, agencia) {
         super(nome, endereco, telefone, cpf, dataDeNascimento);
+        if (salario <= 0.0)
+            throw new Error("O salaário deve ser maior que zero");
         this._salario = salario;
-        if (agencia != "" && agencia.length == 4 && agencia.match(/^[0-9]+$/)) {
-            this._agencia = agencia;
-        }
-        else {
+        if (agencia === "" && agencia.length !== 4 && !agencia.match(/^[0-9]+$/))
             throw new Error("A agência deve ter exatamente 4 caracteres, sendo todos numéricos.");
-        }
+        this._agencia = agencia;
         Funcionario.qtFuncionarios++;
         this._matricula = Funcionario.qtFuncionarios;
     }
@@ -24,24 +23,21 @@ class Funcionario extends Pessoa_1.default {
         return this._salario;
     }
     set salario(novoSalario) {
-        if (novoSalario > 0.0) {
+        if (novoSalario > 0.0)
             this._salario = novoSalario;
-        }
     }
     get agencia() {
         return this._agencia;
     }
     set agencia(novaAgencia) {
-        if (novaAgencia != "" && novaAgencia.length == 4 && novaAgencia.match(/^[0-9]+$/)) {
-            this._agencia = novaAgencia;
-        }
-        throw new Error("A agência deve ter exatamente 4 caracteres, sendo todos numéricos.");
+        if (novaAgencia === "" && novaAgencia.length !== 4 && !novaAgencia.match(/^[0-9]+$/))
+            throw new Error("A agência deve ter exatamente 4 caracteres, sendo todos numéricos.");
+        this._agencia = novaAgencia;
     }
     bonificacao(percentual) {
-        if (percentual <= 0) {
+        if (percentual <= 0)
             throw new Error("Percentual deve ser maior que zero.");
-        }
-        return this._salario *= (1 + percentual / 100);
+        return this._salario * (percentual / 100);
     }
     toString() {
         return `${super.toString()}

@@ -15,7 +15,7 @@ TesteGerentes1.forEach((funcionario) => {
     console.log(funcionario.toString());
 });
 const TesteGerentes2 = [
-    new Gerente_1.default("Maria", "Avenida das Olarias, 123", "(03) 12345-6789", "435.456.789-32", new Date("1990/10/18"), 1000, "0001", "Regional"),
+    new Gerente_1.default("Maria", "Avenida das Olarias, 123", "(03) 12345-6789", "435.456.789-32", new Date("1990/05/12"), 1000, "0001", "Regional"),
     new Gerente_1.default("João", "Rodovia dos Pássaros, 23", "(04) 98765-4321", "546.232.435-00", new Date("1990/10/18"), 1000, "0001", "Conta"),
 ];
 TesteGerentes2.forEach((funcionario) => {

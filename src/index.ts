@@ -13,7 +13,7 @@ const TesteGerentes1: Funcionario[] = [
 })
 
 const TesteGerentes2: Funcionario[] = [
-    new Gerente ("Maria", "Avenida das Olarias, 123", "(03) 12345-6789", "435.456.789-32", new Date("1990/10/18"), 1000, "0001", "Regional"),
+    new Gerente ("Maria", "Avenida das Olarias, 123", "(03) 12345-6789", "435.456.789-32", new Date("1990/05/12"), 1000, "0001", "Regional"),
     new Gerente ("João", "Rodovia dos Pássaros, 23", "(04) 98765-4321", "546.232.435-00", new Date("1990/10/18"), 1000, "0001", "Conta"),
 ];
 
