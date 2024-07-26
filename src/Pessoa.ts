@@ -1,4 +1,4 @@
-class Pessoa {
+abstract class Pessoa {
     private _nome: string;
     private _endereco: string;
     private _telefone!: string;

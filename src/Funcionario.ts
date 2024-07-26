@@ -1,6 +1,6 @@
 import Pessoa from "./Pessoa"
 
-class Funcionario extends Pessoa {
+abstract class Funcionario extends Pessoa {
   private static qtFuncionarios: number = 0;
 
   private _matricula: number;
