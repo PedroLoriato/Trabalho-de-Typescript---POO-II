@@ -19,9 +19,9 @@ class Cliente extends Pessoa_1.default {
         }
     }
     toString() {
-        return "Cliente:\n" +
-            super.toString() +
-            "\nAgência : " + this._agencia;
+        return `Cliente
+                ${super.toString()}
+                Agência: ${this._agencia}`;
     }
 }
 exports.Cliente = Cliente;

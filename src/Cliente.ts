@@ -18,9 +18,9 @@ export class Cliente extends Pessoa{
     }
     
     toString(): string{
-        return "Cliente:\n"+
-            super.toString() +
-            "\nAgência : " + this._agencia;
+        return `Cliente
+                ${super.toString()}
+                Agência: ${this._agencia}`;
     }
 }
 
