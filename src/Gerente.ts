@@ -3,8 +3,8 @@ import Funcionario from "./Funcionario";
 class Gerente extends Funcionario {
     private _nivel: string;
 
-    constructor(nome: string, endereco: string, telefone: string, cpf: string, dataDeNascimento: Date, salario: number, agencia: string, nivel: string) {
-        super(nome, endereco, telefone, cpf, dataDeNascimento, salario, agencia);
+    constructor(nome: string, endereco: string, telefone: string, cpf: string, dtNascimento: Date, salario: number, agencia: string, nivel: string) {
+        super(nome, endereco, telefone, cpf, dtNascimento, salario, agencia);
 
         if (nivel === "") throw new Error("O nível deve ser informado");
         this._nivel = nivel.toUpperCase();

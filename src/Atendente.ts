@@ -3,8 +3,8 @@ import Funcionario from "./Funcionario";
 class Atendente extends Funcionario {
     private _tipo: string;
 
-    constructor(nome: string, endereco: string, telefone: string, cpf: string, dataDeNascimento: Date, salario: number, agencia: string, tipo: string) {
-        super(nome, endereco, telefone, cpf, dataDeNascimento, salario, agencia);
+    constructor(nome: string, endereco: string, telefone: string, cpf: string, dtNascimento: Date, salario: number, agencia: string, tipo: string) {
+        super(nome, endereco, telefone, cpf, dtNascimento, salario, agencia);
         this._tipo = tipo.toUpperCase();
 
         const tiposPermitidos = ["CAIXA", "PESSOAL"];

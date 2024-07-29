@@ -5,8 +5,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const Funcionario_1 = __importDefault(require("./Funcionario"));
 class Atendente extends Funcionario_1.default {
-    constructor(nome, endereco, telefone, cpf, dataDeNascimento, salario, agencia, tipo) {
-        super(nome, endereco, telefone, cpf, dataDeNascimento, salario, agencia);
+    constructor(nome, endereco, telefone, cpf, dtNascimento, salario, agencia, tipo) {
+        super(nome, endereco, telefone, cpf, dtNascimento, salario, agencia);
         this._tipo = tipo.toUpperCase();
         const tiposPermitidos = ["CAIXA", "PESSOAL"];
         if (!tiposPermitidos.includes(this._tipo))

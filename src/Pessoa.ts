@@ -54,8 +54,8 @@ abstract class Pessoa {
         return this._cpf;
     }
 
-    public get data(): string {
-        return this._dtNascimento.toLocaleDateString();
+    public get dtNascimento(): Date {
+        return this._dtNascimento;
     }
 
     public set dtNascimento(novaData: Date) {
@@ -68,7 +68,7 @@ abstract class Pessoa {
                 Endereço: ${this._endereco} 
                 Telefone: ${this._telefone} 
                 CPF: ${this._cpf} 
-                Data de Nascimento: ${this.data}`;
+                Data de Nascimento: ${this._dtNascimento.toLocaleDateString()}`;
     }
 }
 

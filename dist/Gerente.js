@@ -5,8 +5,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const Funcionario_1 = __importDefault(require("./Funcionario"));
 class Gerente extends Funcionario_1.default {
-    constructor(nome, endereco, telefone, cpf, dataDeNascimento, salario, agencia, nivel) {
-        super(nome, endereco, telefone, cpf, dataDeNascimento, salario, agencia);
+    constructor(nome, endereco, telefone, cpf, dtNascimento, salario, agencia, nivel) {
+        super(nome, endereco, telefone, cpf, dtNascimento, salario, agencia);
         if (nivel === "")
             throw new Error("O nível deve ser informado");
         this._nivel = nivel.toUpperCase();
