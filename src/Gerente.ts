@@ -25,7 +25,7 @@ class Gerente extends Funcionario {
         this._nivel = novoNivel;
     }
 
-    bonificacao(percentual?: number): number {
+    public bonificacao(percentual?: number): number {
         if (percentual !== undefined) return super.bonificacao(percentual);
         
         const prcBonificacao = this._nivel === "CONTA" ? 0.15 : this.nivel === "AGÊNCIA" ? 0.20 : 0.25;
@@ -33,7 +33,7 @@ class Gerente extends Funcionario {
         return super.salario * prcBonificacao;
     }
 
-    toString(): string {
+    public toString(): string {
         return `Gerente 
                 Nível: ${this._nivel}
                 ${super.toString()}`;

@@ -42,7 +42,7 @@ class Pessoa {
     get cpf() {
         return this._cpf;
     }
-    get dtNascimento() {
+    get data() {
         return this._dtNascimento.toLocaleDateString();
     }
     set dtNascimento(novaData) {
@@ -54,7 +54,7 @@ class Pessoa {
                 Endereço: ${this._endereco} 
                 Telefone: ${this._telefone} 
                 CPF: ${this._cpf} 
-                Data de Nascimento: ${this._dtNascimento.toLocaleDateString()}`;
+                Data de Nascimento: ${this.data}`;
     }
 }
 exports.default = Pessoa;

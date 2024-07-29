@@ -33,7 +33,8 @@ vetFuncionarios.forEach(funcionario => {
         ${funcionario.toString()}
         Bonificação: ${funcionario.bonificacao(10)}`);
 });
-// Inserir um objeto da classe Cliente no vetor de Funcionários e confira a mensagem de erro.
-// Retire o comentário da linha abaixo para ver a mensagem de erro.
-vetFuncionarios.push(new Cliente_1.default("Ana", "Rua das Flores, 25", "(27) 99888-7777", "234.123.456-48", new Date("1998/12/24"), "0008"));
+// Inserir um objeto da classe Cliente no vetor de Funcionários e conferir a mensagem de erro.
+const cliente = new Cliente_1.default("Ana", "Rua das Flores, 25", "(27) 99888-7777", "234.123.456-48", new Date("1998/12/24"), "0008");
+// Retire o comentário da linha abaixo para visualizar a mensagem de erro.
+// vetFuncionarios.push(cliente);
 //# sourceMappingURL=index.js.map

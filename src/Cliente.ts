@@ -17,7 +17,7 @@ export class Cliente extends Pessoa{
         }        
     }
     
-    toString(): string{
+    public toString(): string{
         return `Cliente
                 ${super.toString()}
                 Agência: ${this._agencia}`;

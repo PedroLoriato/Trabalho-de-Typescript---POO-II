@@ -32,7 +32,7 @@ class Atendente extends Funcionario {
         return (super.salario * prcBonificacao);
     }
 
-    toString(): string {
+    public toString(): string {
         return `Atendente 
                 Tipo: ${this._tipo}
                 ${super.toString()}`;
