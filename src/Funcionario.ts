@@ -44,9 +44,11 @@ abstract class Funcionario extends Pessoa {
     this._agencia = novaAgencia;
   }
 
-  public bonificacao(percentual?: number): number;
-  public bonificacao(percentual: number): number {
-      if (percentual <= 0) throw new Error("Percentual deve ser maior que zero.");
+  public bonificacao(percentual?: number): number {
+      if (percentual === undefined) 
+        throw new TypeError("O método espera um parâmetro do tipo Number");
+        if (percentual <= 0) 
+          throw new Error("Percentual deve ser maior que zero.");
       return this._salario * (percentual / 100);
   }
 

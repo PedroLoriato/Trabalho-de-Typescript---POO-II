@@ -25,7 +25,7 @@ console.log("\n\nUsar o método bonificacao() em objetos gerente e atendente, se
 vetFuncionarios.forEach(funcionario => {
     console.log(`
         ${funcionario.toString()} 
-        Bonificação: ${funcionario.bonificacao()}`
+        Bonificação: ${funcionario.bonificacao().toFixed(2)}`
     );
 });
 
@@ -33,7 +33,7 @@ console.log("\n\nUsar o método bonificacao(percentual) em objetos gerente e ate
 vetFuncionarios.forEach(funcionario => {
     console.log(`
         ${funcionario.toString()}
-        Bonificação: ${funcionario.bonificacao(10)}`
+        Bonificação: ${funcionario.bonificacao(10).toFixed(2)}`
     );
 });
 
@@ -41,4 +41,14 @@ vetFuncionarios.forEach(funcionario => {
 const cliente = new Cliente("Ana", "Rua das Flores, 25", "(27) 99888-7777", "234.123.456-48", new Date("1998/12/24"), "0008");
 
 // Retire o comentário da linha abaixo para visualizar a mensagem de erro.
-// vetFuncionarios.push(cliente);
+//vetFuncionarios.push(cliente);
+/*
+error TS2345: Argument of type 'Cliente' is not assignable to parameter of type 'Funcionario'.
+  Type 'Cliente' is missing the following properties from type 'Funcionario': _matricula, _salario, matricula, salario, bonificacao
+
+44 vetFuncionarios.push(cliente);
+                        ~~~~~~~
+
+
+Found 1 error in src/index.ts:44
+*/

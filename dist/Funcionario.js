@@ -35,6 +35,8 @@ class Funcionario extends Pessoa_1.default {
         this._agencia = novaAgencia;
     }
     bonificacao(percentual) {
+        if (percentual === undefined)
+            throw new TypeError("O método espera um parâmetro do tipo Number");
         if (percentual <= 0)
             throw new Error("Percentual deve ser maior que zero.");
         return this._salario * (percentual / 100);

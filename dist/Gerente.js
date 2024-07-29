@@ -26,8 +26,8 @@ class Gerente extends Funcionario_1.default {
     bonificacao(percentual) {
         if (percentual !== undefined)
             return super.bonificacao(percentual);
-        const prcBonificacao = this._nivel === "CONTA" ? 0.15 : this.nivel === "AGÊNCIA" ? 0.20 : 0.25;
-        return super.salario * prcBonificacao;
+        const prcBonificacao = this._nivel === "CONTA" ? 15 : this.nivel === "AGÊNCIA" ? 20 : 25;
+        return super.bonificacao(prcBonificacao);
     }
     toString() {
         return `Gerente 

@@ -25,11 +25,11 @@ class Atendente extends Funcionario {
     }
 
     public bonificacao(percentual?: number): number {
-        if (percentual !== undefined) return super.bonificacao(percentual);
+        if (percentual !== undefined) 
+            return super.bonificacao(percentual);
         
-        const prcBonificacao = this._tipo === "CAIXA" ? 0.07 : 0.10;
-
-        return (super.salario * prcBonificacao);
+        const prcBonificacao = this._tipo === "CAIXA" ? 7 : 10;
+        return super.bonificacao(prcBonificacao);
     }
 
     public toString(): string {
